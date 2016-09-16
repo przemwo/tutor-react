@@ -7,27 +7,44 @@ const projectMembers = [
   {
     id: '1',
     firstName: 'Friedrich',
-    lastName: 'Hayek'
+    lastName: 'Hayek',
+    roles: [
+      'Project Leader',
+      'Foreman'
+    ]
   },
   {
     id: '2',
     firstName: 'Adam',
-    lastName: 'Smith'
+    lastName: 'Smith',
+    roles: [
+      'Project Leader'
+    ]
   },
   {
     id: '3',
     firstName: 'Henry',
-    lastName: 'Hazlitt'
+    lastName: 'Hazlitt',
+    roles: [
+      'Field Worker',
+      'Surveyor'
+    ]
   },
   {
     id: '4',
     firstName: 'Ludwig',
-    lastName: 'Mises'
+    lastName: 'Mises',
+    roles: [
+      'Project Leader'
+    ]
   },
   {
     id: '5',
     firstName: 'Milton',
-    lastName: 'Friedman'
+    lastName: 'Friedman',
+    roles: [
+      'Project Leader'
+    ]
   }
 ];
 

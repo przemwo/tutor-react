@@ -1,4 +1,13 @@
+.posA {  position: absolute; }
+.posR { position: relative; }
+
 #app {
   background-color: #ffc;
   margin: 0 auto;
+}
+
+.show-more {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

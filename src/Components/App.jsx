@@ -2,20 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const AppChild = ({
-  members
+  members,
+  onClick
 }) => {
   return (
     <div className="container">
+      <h2>Project members</h2>
       <ul className="list-unstyled">
         {members.map(member => {
           return (
             <li key={member.id}>
-              <div className="row">
+              <div className="row posR" onClick={onClick}>
+                <div className="show-more posA">More</div>
                 <div className="col-xs-6">
                   {member.firstName} {member.lastName}
                 </div>
                 <div className="col-xs-6">
-                  2
+                  {member.roles.map(role => {
+                    return (
+                      <p>{role}</p>
+                    );
+                  })}
                 </div>
               </div>
             </li>
@@ -33,7 +40,7 @@ const mapStateToProps = (state = {}) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatch
+    onClick: () => { console.log('hej!');}
   };
 };
 const App = connect(mapStateToProps, mapDispatchToProps)(AppChild);
