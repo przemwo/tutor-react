@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import configureStore from './store/configureStore.js';
 import App from './Components/App';
-import main from './Reducers/main';
+import { loadProjectMembers } from './actions/actions';
+import './styles/styles.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(main);
-store.dispatch({
-  type: 'INIT'
-});
+const store = configureStore();
+store.dispatch(loadProjectMembers());
 
 ReactDOM.render(
   <Provider store={store}>

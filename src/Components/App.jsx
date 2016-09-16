@@ -2,36 +2,40 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const AppChild = ({
-  test,
-  onClick
+  members
 }) => {
   return (
-    <div>
-    <p>
-    {test}
-    </p>
-    <button onClick={onClick}>Click me!</button>
+    <div className="container">
+      <ul className="list-unstyled">
+        {members.map(member => {
+          return (
+            <li key={member.id}>
+              <div className="row">
+                <div className="col-xs-6">
+                  {member.firstName} {member.lastName}
+                </div>
+                <div className="col-xs-6">
+                  2
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state = {}) => {
   return {
-    test: state
+    members: state.projectMembers ? state.projectMembers : []
   };
 };
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
-      dispatch({
-        type: 'CHANGE_TEXT',
-        text: 'Inny tekst!'
-      })
-    }
+    dispatch
   };
 };
-
 const App = connect(mapStateToProps, mapDispatchToProps)(AppChild);
 
 export default App;
